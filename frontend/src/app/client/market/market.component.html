@@ -1,10 +1,10 @@
         <div class="col-12 d-flex flex-column">
             <div class="row">
-                <div *ngFor="let market of marketItem; let i = index;" class="col-3 m-1 p-2 text-white bg-opacity-50" style="background-color:#a996c9; border-radius: 10px;">
+                <div *ngFor="let market of marketItem; let i = index;" class="col-3 m-1 p-2 text-white bg-opacity-50" style="background-image: url('../../assets/download.jpeg'); background-repeat: no-repeat; background-size: cover; border-radius: 10px;">
                     <h5>{{market.itemname}}</h5>
                     <p>{{market.quantityIn}} Available</p>
                     <div class="d-flex flex-row justify-content-center" style="font-weight: bold;">
-                        <button (click)="addItems(i, market)" class="btn btn-primary btn-sm">Add</button>
+                        <button (click)="addItems(i, market)" class="btn btn-light btn-md">Add</button>
                     </div>
                 </div>
             </div>
