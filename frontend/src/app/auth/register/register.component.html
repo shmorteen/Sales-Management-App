@@ -1,0 +1,8 @@
+<div class="p-5" style="width: 300px;">
+    <input class="form-control" placeholder="Fullname" [(ngModel)]="userObj.fullname">
+    <input class="form-control mt-2" placeholder="Username" [(ngModel)]="userObj.username">
+    <input class="form-control mt-2" type="password" placeholder="Password" [(ngModel)]="userObj.password">
+    <button class="btn btn-sm btn-primary rounded-pill w-100 mt-3" (click)="registerUser()">Register Now</button>
+
+    <p class="text-muted mt-2">Already have an account? <a routerLink="/auth/login">Login Now</a></p>
+</div>

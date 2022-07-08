@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<div class="col-10 p-3">    
+    <p style="font-size: 16px; font-weight:bold;">Expected Return<i class="bi bi-cash m-1" style="font-size:20px;"></i>: &#8358;{{expReturn}}</p>
+    <div class="col-12 d-flex flex-row justify-content-end mb-3">    
+      <button class="btn btn-success btn-sm"(click)="getAllReport(i)">Get Report</button>
+      </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Item name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of report">
+            <td>{{r.itemname}}</td>
+            <td>{{r.quantityOut}}</td>
+            <td>{{r.price}}</td>
+            <td>{{r.quantityOut * r.price}}</td>
+            <td>{{date[0]}}</td>
+          </tr>
+  
+        </tbody>
+      </table>
+      <div class="col-12 d-flex flex-row justify-content-end">    
+        <button class="tn btn-primary btn-sm" *ngIf="exp">Export to Excel</button>
+        </div>
+</div>

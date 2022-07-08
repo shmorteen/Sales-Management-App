@@ -1,0 +1,36 @@
+<div class="col-12 d-flex flex-row">
+  <div class="col-4 d-flex flex-column p-4 border shadow-lg" style="border-radius: 20px;">
+    <label>Item name</label>
+    <input [(ngModel)]="itemObject.itemname" class="form-control p-2 mb-4 bg-body rounded"
+      style="border-radius: 0px; outline: none; border: none; border-left: 1px solid #0275d8 ; border-right: 1px solid #0275d8;">
+    <label>Price</label>
+    <input [(ngModel)]="itemObject.price" class="form-control p-2 mb-4 bg-body rounded"
+      style="border-radius: 0px; outline: none; border: none; border-left: 1px solid #0275d8 ; border-right: 1px solid #0275d8;">
+    <label>Quantity In Stock</label>
+    <input [(ngModel)]="itemObject.quantityIn" class="form-control p-2 mb-4 bg-body rounded"
+      style="border-radius: 0px; outline: none; border: none; border-left: 1px solid #0275d8 ; border-right: 1px solid #0275d8;">
+    <div class="d-flex flex-row justify-content-center">
+      <button class="btn btn-success btn-sm" (click)="saveItem()">Save Item</button>
+    </div>
+  </div>
+  <div class="col-8 p-4">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Item name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity In</th>
+          <th scope="col">Quantity Out</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of motherItem">
+        <tr>
+          <td>{{item.itemname}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.quantityIn}}</td>
+          <td>{{item.quantityOut}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
