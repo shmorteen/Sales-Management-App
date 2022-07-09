@@ -12,11 +12,15 @@ export class CartComponent implements OnInit {
   allItems : any = [];
   sales: any = [];
   response: any ={};
-
+  pBtn: boolean = false
   constructor(private router: Router, private httpService: HttpService) { }
 
   ngOnInit(): void {
     this.getcartItems();
+    let gh = this.cartItems
+    if (gh != []){
+      this.pBtn = true
+    }
   }
 
 

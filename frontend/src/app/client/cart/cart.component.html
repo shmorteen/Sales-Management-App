@@ -22,10 +22,10 @@
                 </div>
             </div>
             <div class="col-12 d-flex flex-row justify-content-end mt-3">    
-            <p style="font-size: 30px;">Total: &#8358;{{getTotal()}}</p>
+            <p style="font-size: 30px;" *ngIf="pBtn">Total: &#8358;{{getTotal()}}</p>
             </div>
             <div class="d-flex flex-row justify-content-center">
-                <button (click)="processOrder()" class="btn btn-primary btn-lg">Process Order</button>
+                <button *ngIf="pBtn" (click)="processOrder()" class="btn btn-primary btn-lg">Process Order</button>
             </div>
         </div>
     </div>

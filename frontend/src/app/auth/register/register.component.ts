@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/utility/http.service';
 
 @Component({
@@ -13,8 +14,11 @@ export class RegisterComponent implements OnInit {
     password: ''
   };
   users: any[] = [];
+  response: any = {}
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private router: Router) { 
+
+  }
 
   ngOnInit(): void {
    
@@ -23,7 +27,14 @@ export class RegisterComponent implements OnInit {
   
   registerUser(){
     this.httpService.registerUser(this.userObj).subscribe((resp) => {
+      this.response = resp;
+      if(this.response.message == 'Registration successful'){
+          this.router.navigate(['/auth/login']);
+      }else{
+        alert(this.response.message);
+      }
     });
+    
   }
 
 }
